@@ -2,7 +2,6 @@
 include_once("config.php");
  ?>
 <!-- Footer Section Begin -->
-<!-- Footer Section Begin -->
     <footer class="footer-section">
         <div class="container">
             <div class="row">
