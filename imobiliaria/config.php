@@ -4,8 +4,8 @@ $whatsapp = "(31)97527-5084";
 $telfixo = "(31)3333-3333";
 $whatsappLink = "5531975275084";
 $itens_por_pagina = 6;
-$nomeDaImobiliaria = "Imobiliária IMOB";
-$email = "projetoimobiliariahv@gmail.com";
+$nomeDaImobiliaria = "Liberty Place";
+$email = "libertyplaceimobiliaria@gmail.com";
 
 //DADOS PARA CONEXÃO COM BD LOCAL
 

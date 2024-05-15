@@ -9,11 +9,10 @@ include_once("config.php");
                     <div class="fs-about">
                         <div class="fs-logo">
                             <a href="#">
-                                <img src="img/logo-b-p.png" alt="">
+                                <img src="img/logo_branco.png" alt="">
                             </a>
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua ut aliquip ex ea</p>
+                        <p>Nos preocupamos em trazer as melhores oportunidades de negocios com segurança para o seu bem estar</p>
 
                       <?php if($_GET['id'] == null){ ?>
                         <div class="fs-social">

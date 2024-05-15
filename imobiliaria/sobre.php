@@ -12,7 +12,7 @@ include_once("cabecalho.php");
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb-text">
-                        <h4>IMOB & CIA</h4>
+                        <h4>Liberty Place</h4>
                         <div class="bt-option">
                             <a href="./index.php"><i class="fa fa-home"></i> Home</a>
                             <span>Sobre</span>
@@ -31,9 +31,8 @@ include_once("cabecalho.php");
                 <div class="col-lg-6">
                     <div class="about-text">
                         <div class="at-title">
-                            <h3>Bem vindo a IMOB</h3>
-                            <p>Lorem Ipsum has been the industry?s standard dummy text ever since the 1500s, when an
-                                unknown printer took a galley of type.</p>
+                            <h3>Bem vindo a Liberty Place</h3>
+                            <p>A Liberty place tras a liberdade e facilidade que voce precisa no seu dia a dia. </p>
                         </div>
                         <div class="at-feature">
                             <div class="af-item">
@@ -42,7 +41,7 @@ include_once("cabecalho.php");
                                 </div>
                                 <div class="af-text">
                                     <h6>Os melhores imóveis</h6>
-                                    <p>We help you find a new home by offering a smart real estate.</p>
+                                    <p>As melhores opções na cidade</p>
                                 </div>
                             </div>
                             <div class="af-item">
@@ -50,8 +49,8 @@ include_once("cabecalho.php");
                                     <img src="img/chooseus/chooseus-icon-2.png" alt="">
                                 </div>
                                 <div class="af-text">
-                                    <h6>Sus compra facilita</h6>
-                                    <p>Find an agent who knows your market best</p>
+                                    <h6>Seu aluguel ou sua compra facilita</h6>
+                                    <p>Encontre as melhores opções na sua região</p>
                                 </div>
                             </div>
                             <div class="af-item">
@@ -59,8 +58,8 @@ include_once("cabecalho.php");
                                     <img src="img/chooseus/chooseus-icon-3.png" alt="">
                                 </div>
                                 <div class="af-text">
-                                    <h6>Corretores Especilizados</h6>
-                                    <p>Millions of houses and apartments in your favourite cities</p>
+                                    <h6>Suporte Especilizados</h6>
+                                    <p>O melhor suporte que você precisa</p>
                                 </div>
                             </div>
                             <div class="af-item">
@@ -69,7 +68,7 @@ include_once("cabecalho.php");
                                 </div>
                                 <div class="af-text">
                                     <h6>Melhores Localizações</h6>
-                                    <p>Sign up now and sell or rent your own properties</p>
+                                    <p>As melhores propriedades da região</p>
                                 </div>
                             </div>
                         </div>
@@ -94,7 +93,7 @@ include_once("cabecalho.php");
         <div class="row">
             <div class="col-lg-8 col-md-8">
                 <div class="section-title">
-                    <h4>Corretores Destaques</h4>
+                    <h4>Destaques de suporte</h4>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4">
@@ -168,8 +167,7 @@ include_once("cabecalho.php");
             <div class="col-lg-6">
                 <div class="testimonial-item">
                     <div class="ti-text">
-                        <p>Lorem ipsum dolor amet, consectetur adipiscing elit, seiusmod tempor incididunt ut labore
-                            magna aliqua. Quis ipsum suspendisse ultrices gravida accumsan lacus vel facilisis.</p>
+                        <p>Encontrei a melhor casa no bairro que eu queria, consegui contato diretamente com o dono o que me poupou tempo. </p>
                     </div>
                     <div class="ti-author">
                         <div class="ta-pic">
@@ -192,8 +190,7 @@ include_once("cabecalho.php");
             <div class="col-lg-6">
                 <div class="testimonial-item">
                     <div class="ti-text">
-                        <p>Lorem ipsum dolor amet, consectetur adipiscing elit, seiusmod tempor incididunt ut labore
-                            magna aliqua. Quis ipsum suspendisse ultrices gravida accumsan lacus vel facilisis.</p>
+                        <p>Tive a facilidade de encontrar uma casa proxima ao meu trabalho.</p>
                     </div>
                     <div class="ti-author">
                         <div class="ta-pic">
@@ -216,8 +213,7 @@ include_once("cabecalho.php");
             <div class="col-lg-6">
                 <div class="testimonial-item">
                     <div class="ti-text">
-                        <p>Lorem ipsum dolor amet, consectetur adipiscing elit, seiusmod tempor incididunt ut labore
-                            magna aliqua. Quis ipsum suspendisse ultrices gravida accumsan lacus vel facilisis.</p>
+                        <p>Consegui ver todas as opções que eu tinha pelo meu computador sem precisar me locomover e ainda tive um suporte do time sem comparações</p>
                     </div>
                     <div class="ti-author">
                         <div class="ta-pic">

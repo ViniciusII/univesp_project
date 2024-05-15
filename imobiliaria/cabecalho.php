@@ -10,10 +10,10 @@ include_once("config.php");
     <head>
         <meta charset="utf-8"/>
         <meta name="description" content="Imobiliária IMOB - Os Melhores imóveis ...">
-        <meta name="keywords" content="Comprar imoveis, imóveis em Venda Nova, imóveis em Belo Horizonte">
+        <meta name="keywords" content="Locação e venda de imoveis na região de Leme-SP">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>IMOB</title>
+        <title>libertyplace</title>
 
         <!-- Google Font -->
         <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900&display=swap"
@@ -57,7 +57,7 @@ include_once("config.php");
             </div>
             <div class="logo">
                 <a href="./index.jsp">
-                    <img src="img/logo.png" alt="">
+                    <img src="img/logo_1.png" alt="">
                 </a>
             </div>
             <div id="mobile-menu-wrap"></div>
@@ -97,7 +97,7 @@ include_once("config.php");
                     <div class="row">
                         <div class="col-lg-2">
                             <div class="logo">
-                                <a href="./index.jsp"><img src="img/logo.png" alt=""></a>
+                                <a href="./index.jsp"><img src="img/logo_1.png" alt=""></a>
                             </div>
                         </div>
                         <div class="col-lg-8">
