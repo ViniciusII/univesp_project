@@ -9,7 +9,7 @@ include_once("config.php");
 
     <head>
         <meta charset="utf-8"/>
-        <meta name="description" content="Imobiliária IMOB - Os Melhores imóveis ...">
+        <meta name="description" content="Imobiliária Liberty Place - Os Melhores imóveis ...">
         <meta name="keywords" content="Locação e venda de imoveis na região de Leme-SP">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -56,7 +56,7 @@ include_once("config.php");
                 <span class="icon_close"></span>
             </div>
             <div class="logo">
-                <a href="./index.jsp">
+                <a href="./index.php">
                     <img src="img/logo_1.png" alt="">
                 </a>
             </div>
@@ -97,7 +97,7 @@ include_once("config.php");
                     <div class="row">
                         <div class="col-lg-2">
                             <div class="logo">
-                                <a href="./index.jsp"><img src="img/logo_1.png" alt=""></a>
+                                <a href="./index.php"><img src="img/logo_1.png" alt=""></a>
                             </div>
                         </div>
                         <div class="col-lg-8">

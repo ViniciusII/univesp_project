@@ -13,8 +13,7 @@ include_once("config.php");
                             </a>
                         </div>
                         <p>Nos preocupamos em trazer as melhores oportunidades de negocios com segurança para o seu bem estar</p>
-
-                      <?php if($_GET['id'] == null){ ?>
+                    <?php if(isset($_GET['id']) && $_GET['id'] == null){ ?>
                         <div class="fs-social">
                             <a href="#"><i class="fa fa-facebook"></i></a>
                             <a href="#"><i class="fa fa-twitter"></i></a>

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 13-Ago-2020 às 02:46
--- Versão do servidor: 10.4.11-MariaDB
--- versão do PHP: 7.4.8
+-- Tempo de geração: 16/05/2024 às 23:40
+-- Versão do servidor: 10.4.32-MariaDB
+-- Versão do PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `alugueis`
+-- Estrutura para tabela `alugueis`
 --
 
 CREATE TABLE `alugueis` (
@@ -38,66 +38,80 @@ CREATE TABLE `alugueis` (
   `data_inicio` date DEFAULT NULL,
   `data_final` date DEFAULT NULL,
   `inquilino` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Extraindo dados da tabela `alugueis`
+-- Despejando dados para a tabela `alugueis`
 --
 
 INSERT INTO `alugueis` (`id`, `imovel`, `corretor`, `valor`, `ativo`, `data`, `data_pgto`, `data_inicio`, `data_final`, `inquilino`) VALUES
-(1, 137, '555.555.555-66', '750.00', 'Sim', '2020-08-12', '2020-09-11', '2020-08-12', '2025-08-12', '111.111.111-19'),
-(2, 170, '555.555.555-66', '1000.00', 'Sim', '2020-08-12', '2020-09-11', '2020-08-12', '2029-08-12', '111.111.111-11'),
-(3, 179, '555.555.555-66', '750.00', 'Sim', '2020-07-14', '2020-08-13', '2020-07-14', '2022-07-14', '111.111.111-11');
+(1, 137, '555.555.555-66', 750.00, 'Sim', '2020-08-12', '2020-09-11', '2020-08-12', '2025-08-12', '111.111.111-19'),
+(2, 170, '555.555.555-66', 1000.00, 'Sim', '2020-08-12', '2020-09-11', '2020-08-12', '2029-08-12', '111.111.111-11'),
+(3, 179, '555.555.555-66', 750.00, 'Sim', '2020-07-14', '2020-08-13', '2020-07-14', '2022-07-14', '111.111.111-11');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `bairros`
+-- Estrutura para tabela `bairros`
 --
 
 CREATE TABLE `bairros` (
   `id` int(11) NOT NULL,
   `nome` varchar(60) NOT NULL,
   `cidade` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Extraindo dados da tabela `bairros`
+-- Despejando dados para a tabela `bairros`
 --
 
 INSERT INTO `bairros` (`id`, `nome`, `cidade`) VALUES
-(1, 'Cabana 3', 1),
-(2, 'Vila Oeste', 1),
-(3, 'Piratininga', 1),
-(4, 'Serra Verde', 1),
-(5, 'Ipiranga', 1),
-(6, 'Jabotica', 3);
+(1, 'Centro', 1),
+(2, 'Barra Funda', 1),
+(3, 'Jardim Itamaraty ', 1),
+(4, 'Santa Carolina', 1),
+(5, 'Nova Leme', 1),
+(6, 'Cidade Jardim', 3),
+(7, 'Jardim Alvorada', 2),
+(8, 'Jardim das Árvores', 2),
+(9, 'Jardim Nova Europa', 2),
+(10, 'Jardim São Conrado', 2),
+(11, 'Centro', 2),
+(12, 'Centro', 4),
+(13, 'Jardim Andrea', 4),
+(14, 'Jardim da Enseada', 4),
+(15, 'Jardim Alto das Águas', 4),
+(16, 'Vila Portal do Lago', 4),
+(17, 'Jardim América', 3),
+(18, 'Jardim Bandeirantes', 3),
+(19, 'Jardim Brasília', 3),
+(20, 'Jardim das Laranjeiras', 3);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `cidades`
+-- Estrutura para tabela `cidades`
 --
 
 CREATE TABLE `cidades` (
   `id` int(11) NOT NULL,
   `nome` varchar(80) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Extraindo dados da tabela `cidades`
+-- Despejando dados para a tabela `cidades`
 --
 
 INSERT INTO `cidades` (`id`, `nome`) VALUES
-(1, 'Belo Horizonte'),
-(2, 'Contagem'),
-(3, 'Jaboticatubas'),
-(4, 'Santa Luzia');
+(1, 'Leme'),
+(2, 'Araras'),
+(3, 'Pirassununga'),
+(4, 'Santa Cruz da Conceição');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `compradores`
+-- Estrutura para tabela `compradores`
 --
 
 CREATE TABLE `compradores` (
@@ -108,10 +122,10 @@ CREATE TABLE `compradores` (
   `telefone` varchar(15) NOT NULL,
   `endereco` varchar(100) NOT NULL,
   `corretor` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Extraindo dados da tabela `compradores`
+-- Despejando dados para a tabela `compradores`
 --
 
 INSERT INTO `compradores` (`id`, `nome`, `tipo_pessoa`, `doc`, `telefone`, `endereco`, `corretor`) VALUES
@@ -129,7 +143,7 @@ INSERT INTO `compradores` (`id`, `nome`, `tipo_pessoa`, `doc`, `telefone`, `ende
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `contas_pagar`
+-- Estrutura para tabela `contas_pagar`
 --
 
 CREATE TABLE `contas_pagar` (
@@ -141,36 +155,36 @@ CREATE TABLE `contas_pagar` (
   `tesoureiro` varchar(20) DEFAULT NULL,
   `data` date NOT NULL,
   `foto` varchar(150) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Extraindo dados da tabela `contas_pagar`
+-- Despejando dados para a tabela `contas_pagar`
 --
 
 INSERT INTO `contas_pagar` (`id`, `valor`, `titulo`, `descricao`, `pago`, `tesoureiro`, `data`, `foto`) VALUES
-(1, '750.00', 'Aluguel', 'Paula Campos', 'Não', '', '2020-07-13', '1594749125479conta2.png'),
-(2, '380.00', 'Compra de Vidro', 'Vidro Janela', 'Sim', '777.777.777-77', '2020-07-14', NULL),
-(3, '1000.00', 'Aluguel', 'Empreza Zx', 'Sim', '', '2020-07-14', NULL),
-(4, '780.00', 'Pagamento Conta', 'Conta de Luz', 'Sim', '777.777.777-77', '2020-07-14', '1594772511596conta2.png'),
-(5, '1000.00', 'Aluguel', 'Empreza Zx', 'Sim', '', '2020-07-14', NULL),
-(6, '750.00', 'Aluguel', 'Paula Campos', 'Não', '', '2020-07-14', 'conta.jpg'),
-(7, '750.00', 'Aluguel', 'Paula Campos', 'Sim', '', '2020-07-14', NULL),
-(8, '480.00', 'Pagamento Conta', 'Conta de Água', 'Sim', '777.777.777-77', '2020-07-14', '1594774308000conta2.png'),
-(9, '750.00', 'Aluguel', 'Paula Campos', 'Sim', '777.777.777-77', '2020-08-10', NULL),
-(10, '1000.00', 'Aluguel', 'Empreza Zx', 'Sim', '', '2020-08-11', NULL),
-(11, '1600.00', 'Compra de Cadeiras', 'Cadeiras Escritrio', 'Sim', '777.777.777-77', '2020-08-11', NULL),
-(16, '685.00', 'Conta de Luz', 'Mês de Agosto', 'Sim', '777.777.777-77', '2020-08-12', NULL),
-(17, '50.00', 'Conta X', 'Pagamento', 'Sim', '777.777.777-77', '2020-08-12', NULL),
-(18, '860.00', 'Conta de Luz', 'Mês de Agosto', 'Sim', '777.777.777-77', '2020-08-12', NULL),
-(19, '750.00', 'Aluguel', 'Paula Campos', 'Não', '', '2020-08-12', NULL),
-(20, '1000.00', 'Aluguel', 'Empreza Zx', 'Não', '', '2020-08-12', NULL),
-(21, '750.00', 'Aluguel', 'Paula Campos', 'Não', '', '2020-08-12', NULL),
-(22, '1000.00', 'Aluguel', 'Empreza Zx', 'Não', '', '2020-08-12', NULL);
+(1, 750.00, 'Aluguel', 'Paula Campos', 'Não', '', '2020-07-13', '1594749125479conta2.png'),
+(2, 380.00, 'Compra de Vidro', 'Vidro Janela', 'Sim', '777.777.777-77', '2020-07-14', NULL),
+(3, 1000.00, 'Aluguel', 'Empreza Zx', 'Sim', '', '2020-07-14', NULL),
+(4, 780.00, 'Pagamento Conta', 'Conta de Luz', 'Sim', '777.777.777-77', '2020-07-14', '1594772511596conta2.png'),
+(5, 1000.00, 'Aluguel', 'Empreza Zx', 'Sim', '', '2020-07-14', NULL),
+(6, 750.00, 'Aluguel', 'Paula Campos', 'Não', '', '2020-07-14', 'conta.jpg'),
+(7, 750.00, 'Aluguel', 'Paula Campos', 'Sim', '', '2020-07-14', NULL),
+(8, 480.00, 'Pagamento Conta', 'Conta de Água', 'Sim', '777.777.777-77', '2020-07-14', '1594774308000conta2.png'),
+(9, 750.00, 'Aluguel', 'Paula Campos', 'Sim', '777.777.777-77', '2020-08-10', NULL),
+(10, 1000.00, 'Aluguel', 'Empreza Zx', 'Sim', '', '2020-08-11', NULL),
+(11, 1600.00, 'Compra de Cadeiras', 'Cadeiras Escritrio', 'Sim', '777.777.777-77', '2020-08-11', NULL),
+(16, 685.00, 'Conta de Luz', 'Mês de Agosto', 'Sim', '777.777.777-77', '2020-08-12', NULL),
+(17, 50.00, 'Conta X', 'Pagamento', 'Sim', '777.777.777-77', '2020-08-12', NULL),
+(18, 860.00, 'Conta de Luz', 'Mês de Agosto', 'Sim', '777.777.777-77', '2020-08-12', NULL),
+(19, 750.00, 'Aluguel', 'Paula Campos', 'Não', '', '2020-08-12', NULL),
+(20, 1000.00, 'Aluguel', 'Empreza Zx', 'Não', '', '2020-08-12', NULL),
+(21, 750.00, 'Aluguel', 'Paula Campos', 'Não', '', '2020-08-12', NULL),
+(22, 1000.00, 'Aluguel', 'Empreza Zx', 'Não', '', '2020-08-12', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `contas_receber`
+-- Estrutura para tabela `contas_receber`
 --
 
 CREATE TABLE `contas_receber` (
@@ -183,37 +197,37 @@ CREATE TABLE `contas_receber` (
   `data` date NOT NULL,
   `pago` varchar(5) NOT NULL,
   `cliente` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Extraindo dados da tabela `contas_receber`
+-- Despejando dados para a tabela `contas_receber`
 --
 
 INSERT INTO `contas_receber` (`id`, `valor`, `titulo`, `descricao`, `tipo`, `corretor`, `data`, `pago`, `cliente`) VALUES
-(7, '750.00', 'Pagamento Aluguel', 'Empresa X', 'Aluguel', '555.555.555-66', '2020-07-13', 'Sim', '58.588.888/8888-88'),
-(8, '1000.00', 'Pagamento Aluguel', 'Marcos Campos', 'Aluguel', '555.555.555-66', '2020-07-14', 'Sim', '111.111.111-11'),
-(9, '185000.00', 'Pagamento Venda', 'Carla Silva', 'Venda', '555.555.555-66', '2020-07-13', 'Sim', '111.111.111-19'),
-(10, '750.00', 'Pagamento Aluguel', 'Matheus Silva', 'Aluguel', '777.777.777-77', '2020-07-14', 'Sim', '111.111.111-20'),
-(11, '750.00', 'Pagamento Aluguel', 'Matheus Silva', 'Aluguel', '555.555.555-66', '2020-07-14', 'Sim', '111.111.111-20'),
-(12, '1000.00', 'Pagamento Aluguel', 'Matheus Silva', 'Aluguel', '555.555.555-66', '2020-07-14', 'Sim', '111.111.111-20'),
-(13, '980000.00', 'Pagamento Venda', 'Empresa X', 'Venda', '555.555.555-66', '2020-07-14', 'Sim', '58.588.888/8888-88'),
-(14, '1000.00', 'Pagamento Aluguel', 'Carla Silva', 'Aluguel', '555.555.555-66', '2020-07-14', 'Não', '111.111.111-19'),
-(15, '750.00', 'Pagamento Aluguel', 'Marcos Campos', 'Aluguel', '555.555.555-66', '2020-07-14', 'Não', '111.111.111-11'),
-(16, '750.00', 'Pagamento Aluguel', 'Marcos Campos', 'Aluguel', '555.555.555-66', '2020-07-14', 'Sim', '111.111.111-11'),
-(17, '750.00', 'Pagamento Aluguel', 'Maurilio', 'Aluguel', '555.555.555-66', '2020-08-10', 'Sim', 'fsdsf'),
-(18, '60.00', 'Venda de Cadeiras', 'Venda ', 'Diversos', '777.777.777-77', '2020-08-10', 'Sim', ''),
-(19, '1000.00', 'Pagamento Aluguel', 'Matheus Campos', 'Aluguel', '555.555.555-66', '2020-08-11', 'Sim', '111111113'),
-(20, '680000.00', 'Pagamento Venda', 'Carla Silva', 'Venda', '555.555.555-66', '2020-08-11', 'Sim', '111.111.111-19'),
-(22, '750.00', 'Pagamento Aluguel', 'Maurilio', 'Aluguel', '555.555.555-66', '2020-08-12', 'Não', 'fsdsf'),
-(23, '1000.00', 'Pagamento Aluguel', 'Matheus Campos', 'Aluguel', '555.555.555-66', '2020-08-12', 'Não', '111111113'),
-(24, '550.00', 'Pagamento Venda', 'Carla Silva', 'Venda', '555.555.555-66', '2020-08-12', 'Não', '111.111.111-19'),
-(25, '750.00', 'Pagamento Aluguel', 'Carla Silva', 'Aluguel', '555.555.555-66', '2020-08-12', 'Não', '111.111.111-19'),
-(26, '1000.00', 'Pagamento Aluguel', 'Marcos Campos', 'Aluguel', '555.555.555-66', '2020-08-12', 'Não', '111.111.111-11');
+(7, 750.00, 'Pagamento Aluguel', 'Empresa X', 'Aluguel', '555.555.555-66', '2020-07-13', 'Sim', '58.588.888/8888-88'),
+(8, 1000.00, 'Pagamento Aluguel', 'Marcos Campos', 'Aluguel', '555.555.555-66', '2020-07-14', 'Sim', '111.111.111-11'),
+(9, 185000.00, 'Pagamento Venda', 'Carla Silva', 'Venda', '555.555.555-66', '2020-07-13', 'Sim', '111.111.111-19'),
+(10, 750.00, 'Pagamento Aluguel', 'Matheus Silva', 'Aluguel', '777.777.777-77', '2020-07-14', 'Sim', '111.111.111-20'),
+(11, 750.00, 'Pagamento Aluguel', 'Matheus Silva', 'Aluguel', '555.555.555-66', '2020-07-14', 'Sim', '111.111.111-20'),
+(12, 1000.00, 'Pagamento Aluguel', 'Matheus Silva', 'Aluguel', '555.555.555-66', '2020-07-14', 'Sim', '111.111.111-20'),
+(13, 980000.00, 'Pagamento Venda', 'Empresa X', 'Venda', '555.555.555-66', '2020-07-14', 'Sim', '58.588.888/8888-88'),
+(14, 1000.00, 'Pagamento Aluguel', 'Carla Silva', 'Aluguel', '555.555.555-66', '2020-07-14', 'Não', '111.111.111-19'),
+(15, 750.00, 'Pagamento Aluguel', 'Marcos Campos', 'Aluguel', '555.555.555-66', '2020-07-14', 'Não', '111.111.111-11'),
+(16, 750.00, 'Pagamento Aluguel', 'Marcos Campos', 'Aluguel', '555.555.555-66', '2020-07-14', 'Sim', '111.111.111-11'),
+(17, 750.00, 'Pagamento Aluguel', 'Maurilio', 'Aluguel', '555.555.555-66', '2020-08-10', 'Sim', 'fsdsf'),
+(18, 60.00, 'Venda de Cadeiras', 'Venda ', 'Diversos', '777.777.777-77', '2020-08-10', 'Sim', ''),
+(19, 1000.00, 'Pagamento Aluguel', 'Matheus Campos', 'Aluguel', '555.555.555-66', '2020-08-11', 'Sim', '111111113'),
+(20, 680000.00, 'Pagamento Venda', 'Carla Silva', 'Venda', '555.555.555-66', '2020-08-11', 'Sim', '111.111.111-19'),
+(22, 750.00, 'Pagamento Aluguel', 'Maurilio', 'Aluguel', '555.555.555-66', '2020-08-12', 'Não', 'fsdsf'),
+(23, 1000.00, 'Pagamento Aluguel', 'Matheus Campos', 'Aluguel', '555.555.555-66', '2020-08-12', 'Não', '111111113'),
+(24, 550.00, 'Pagamento Venda', 'Carla Silva', 'Venda', '555.555.555-66', '2020-08-12', 'Não', '111.111.111-19'),
+(25, 750.00, 'Pagamento Aluguel', 'Carla Silva', 'Aluguel', '555.555.555-66', '2020-08-12', 'Não', '111.111.111-19'),
+(26, 1000.00, 'Pagamento Aluguel', 'Marcos Campos', 'Aluguel', '555.555.555-66', '2020-08-12', 'Não', '111.111.111-11');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `corretores`
+-- Estrutura para tabela `corretores`
 --
 
 CREATE TABLE `corretores` (
@@ -227,10 +241,10 @@ CREATE TABLE `corretores` (
   `descricao` varchar(90) DEFAULT NULL,
   `twitter` varchar(150) DEFAULT NULL,
   `facebook` varchar(150) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Extraindo dados da tabela `corretores`
+-- Despejando dados para a tabela `corretores`
 --
 
 INSERT INTO `corretores` (`id`, `nome`, `cpf`, `telefone`, `email`, `endereco`, `foto`, `descricao`, `twitter`, `facebook`) VALUES
@@ -249,7 +263,7 @@ INSERT INTO `corretores` (`id`, `nome`, `cpf`, `telefone`, `email`, `endereco`, 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `entradas`
+-- Estrutura para tabela `entradas`
 --
 
 CREATE TABLE `entradas` (
@@ -261,39 +275,39 @@ CREATE TABLE `entradas` (
   `valor_caixa` decimal(10,2) NOT NULL,
   `data` date NOT NULL,
   `tipo` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Extraindo dados da tabela `entradas`
+-- Despejando dados para a tabela `entradas`
 --
 
 INSERT INTO `entradas` (`id`, `valor`, `tesoureiro`, `corretor`, `valor_corretor`, `valor_caixa`, `data`, `tipo`) VALUES
-(1, '1000.00', '777.777.777-77', '555.555.555-66', '70.00', '30.00', '2020-07-13', 'Aluguel'),
-(2, '750.00', '777.777.777-77', '555.555.555-66', '22.50', '52.50', '2020-07-14', 'Aluguel'),
-(3, '185000.00', '777.777.777-77', '555.555.555-66', '5550.00', '12950.00', '2020-07-14', 'Venda'),
-(4, '750.00', '777.777.777-77', '555.555.555-66', '22.50', '52.50', '2020-07-14', 'Aluguel'),
-(5, '980000.00', '777.777.777-77', '555.555.555-66', '29400.00', '68600.00', '2020-07-14', 'Venda'),
-(6, '750.00', '777.777.777-77', '555.555.555-66', '22.50', '52.50', '2020-07-14', 'Aluguel'),
-(7, '750.00', '777.777.777-77', '555.555.555-66', '22.50', '52.50', '2020-08-10', 'Aluguel'),
-(8, '1000.00', '777.777.777-77', '555.555.555-66', '30.00', '70.00', '2020-08-11', 'Aluguel'),
-(9, '750.00', '777.777.777-77', '555.555.555-66', '22.50', '52.50', '2020-08-11', 'Aluguel'),
-(10, '680000.00', '777.777.777-77', '555.555.555-66', '20400.00', '47600.00', '2020-08-11', 'Venda'),
-(11, '1000.00', '777.777.777-77', '555.555.555-66', '30.00', '70.00', '2020-08-12', 'Aluguel');
+(1, 1000.00, '777.777.777-77', '555.555.555-66', 70.00, 30.00, '2020-07-13', 'Aluguel'),
+(2, 750.00, '777.777.777-77', '555.555.555-66', 22.50, 52.50, '2020-07-14', 'Aluguel'),
+(3, 185000.00, '777.777.777-77', '555.555.555-66', 5550.00, 12950.00, '2020-07-14', 'Venda'),
+(4, 750.00, '777.777.777-77', '555.555.555-66', 22.50, 52.50, '2020-07-14', 'Aluguel'),
+(5, 980000.00, '777.777.777-77', '555.555.555-66', 29400.00, 68600.00, '2020-07-14', 'Venda'),
+(6, 750.00, '777.777.777-77', '555.555.555-66', 22.50, 52.50, '2020-07-14', 'Aluguel'),
+(7, 750.00, '777.777.777-77', '555.555.555-66', 22.50, 52.50, '2020-08-10', 'Aluguel'),
+(8, 1000.00, '777.777.777-77', '555.555.555-66', 30.00, 70.00, '2020-08-11', 'Aluguel'),
+(9, 750.00, '777.777.777-77', '555.555.555-66', 22.50, 52.50, '2020-08-11', 'Aluguel'),
+(10, 680000.00, '777.777.777-77', '555.555.555-66', 20400.00, 47600.00, '2020-08-11', 'Venda'),
+(11, 1000.00, '777.777.777-77', '555.555.555-66', 30.00, 70.00, '2020-08-12', 'Aluguel');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `imagens`
+-- Estrutura para tabela `imagens`
 --
 
 CREATE TABLE `imagens` (
   `id` int(11) NOT NULL,
   `id_imovel` int(11) NOT NULL,
   `imagem` varchar(150) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Extraindo dados da tabela `imagens`
+-- Despejando dados para a tabela `imagens`
 --
 
 INSERT INTO `imagens` (`id`, `id_imovel`, `imagem`) VALUES
@@ -359,7 +373,7 @@ INSERT INTO `imagens` (`id`, `id_imovel`, `imagem`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `imoveis`
+-- Estrutura para tabela `imoveis`
 --
 
 CREATE TABLE `imoveis` (
@@ -386,34 +400,34 @@ CREATE TABLE `imoveis` (
   `endereco` varchar(100) NOT NULL,
   `status` varchar(25) NOT NULL,
   `condicao` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Extraindo dados da tabela `imoveis`
+-- Despejando dados para a tabela `imoveis`
 --
 
 INSERT INTO `imoveis` (`id`, `vendedor`, `corretor`, `titulo`, `descricao`, `tipo`, `cidade`, `bairro`, `valor`, `ano`, `visitas`, `area`, `quartos`, `banheiros`, `suites`, `garagens`, `piscinas`, `img_principal`, `img_planta`, `img_banner`, `endereco`, `status`, `condicao`) VALUES
-(135, '99.999.999/9999-99', '555.555.555-66', 'Apartamento 3 Quartos', 'Apartamento com ....', 4, 1, 3, '180000.00', 1990, 0, 75, 3, 2, 1, 6, 0, '159439855577102apto.jpg', '159439659711600000000 floor-plan.jpg', '1594151051512hero-1.jpg', 'Rua Almeida Campos 150', 'Vendido', 'Usado'),
-(136, '111.111.111-11', '555.555.555-66', 'Casa Grande', '', 3, 3, 6, '680000.00', 2010, 0, 850, 4, 4, 2, 6, 1, '1594496535404sitios.jpg', '159449651829000000000-floor-plan.jpg', '1594151110324hero-2.jpg', 'Rua Almeida Campos 150', 'Para Venda', 'Usado'),
-(137, '111.111.111-11', '555.555.555-66', 'Apartamento Barato', '', 4, 1, 1, '750.00', 2015, 0, 65, 2, 1, 0, 1, 0, '159449690311603aptoal.jpg', '159439675615400000000 floor-plan.jpg', '159449790483502apto.jpg', '', 'Para Aluguel', 'Novo'),
-(138, '99.999.999/9999-99', '555.555.555-66', 'Casa Germinada', '', 6, 1, 4, '550.00', 1990, 0, 69, 3, 1, 1, 1, 1, '1594496362611casa.jpg', '159449637504700000000-floor-plan.jpg', '1594395837724chacara.jpg', 'Rua Almeida Campos 150', 'Para Venda', 'Planta'),
-(169, '99.999.999/9999-99', '555.555.555-66', 'Cobertura Luxuosa', 'fasfdasf', 4, 1, 1, '500000.00', 0, 0, 250, 4, 5, 3, 3, 1, '159469430110109.jpg', '159449663848400000000-floor-plan.jpg', '1594496830423cobertura.jpg', 'fdsfsaf', 'Para Venda', 'Usado'),
-(170, '99.999.999/9999-99', '555.555.555-66', 'Apartamento 2 Quartos', 'Apartamento Localizado em uma das melhores regiões de Belo Horizonte...', 4, 1, 1, '1000.00', 2013, 0, 80, 2, 1, 0, 1, 0, '159439851252201apto.jpg', '159439629533700000000 floor-plan.jpg', '1594151082107hero-2.jpg', 'Rua Almeida Campos 150', 'Alugado', 'Usado'),
-(171, '99.999.999/9999-99', '555.555.555-66', 'Casarão 5 Quartos', 'Casa com ....', 4, 1, 1, '980000.00', 2017, 5, 1400, 5, 4, 2, 4, 1, '1594496567912chacara.jpg', '159449657723600000000-floor-plan.jpg', '1594151094510hero-1.jpg', 'Rua Almeida Campos 150', 'Para Venda', 'Usado'),
-(174, '887.888.888-99', '999.996.666-66', 'Cobertura Grande', 'Cobertura bem Luxuosa...', 4, 1, 5, '2300.00', 2018, 0, 190, 4, 4, 3, 4, 1, '1594692923901cobertura.jpg', '159469298510200000000-floor-plan.jpg', '1594692972184cobertura.jpg', 'Rua Almeida Campos 150', 'Para Aluguel', 'Usado'),
-(175, '111.111.111-11', '555.555.555-66', 'Apartamento Ipiranga', '', 4, 1, 1, '380000.00', 2016, 0, 160, 4, 4, 3, 3, 0, '159469446607801.jpg', 'sem-img.jpg', '159469447535608.jpeg', '', 'Para Venda', 'Usado'),
-(176, '99.999.999/9999-99', '555.555.555-66', 'Chácara Grande', 'Linda chácara..', 1, 3, 6, '490000.00', 1996, 0, 2500, 4, 5, 2, 10, 1, '1594694639714chacara.jpg', 'sem-img.jpg', '1594694649435chacara.jpg', '', 'Para Venda', 'Usado'),
-(177, '99.999.999/9999-99', '555.555.555-66', 'Apartamento Serra Verde', '', 3, 1, 4, '125000.00', 1996, 0, 65, 3, 2, 1, 1, 0, '159469478878006.jpg', 'sem-img.jpg', '159469479382606.jpg', '', 'Para Venda', 'Usado'),
-(178, '111.111.111-11', '555.555.555-66', 'Casa 4 Quartos', '', 3, 1, 3, '225000.00', 1998, 0, 120, 4, 2, 1, 3, 0, '1594694904726casa.webp', 'sem-img.jpg', '1594694917479casa.webp', '', 'Para Venda', 'Usado'),
-(179, '111.111.111-11', '555.555.555-66', 'Casa 2 Quartos', '', 3, 1, 2, '750.00', 1991, 0, 65, 2, 1, 0, 1, 0, '159469501585608.jpeg', 'sem-img.jpg', '159469502090308.jpeg', '', 'Alugado', 'Usado'),
-(180, '99.999.999/9999-99', '555.555.555-66', 'Lote 2 Mil Metros', '', 7, 3, 6, '80000.00', 2020, 0, 2200, 0, 0, 0, 0, 0, '1594765258003lote.png', 'sem-img.jpg', '1594765267097lotes.jpg', '', 'Para Venda', 'Novo'),
-(181, '111.111.111-11', '555.555.555-66', 'Apartamento Centro', 'Apartamento ...', 4, 3, 6, '180.00', 1995, 0, 68, 3, 1, 0, 1, 0, '05.jpg', '00000000 floor-plan.jpg', '08.jpeg', 'Rua Almeida Campos 150', 'Vendido', 'Usado'),
-(184, '99.999.999/9999-99', '555.555.555-66', 'Cobertura Excelente', 'Excelente Cobertura em Bairro Bom em Belo ...', 5, 1, 5, '760000.00', 2018, 0, 130, 4, 3, 2, 2, 0, '07.jpeg', '00000000 floor-plan.jpg', '09.jpg', 'Rua A', 'Para Venda', 'Usado');
+(135, '99.999.999/9999-99', '555.555.555-66', 'Apartamento 3 Quartos', 'Apartamento com ....', 4, 1, 3, 180000.00, 1990, 0, 75, 3, 2, 1, 6, 0, '159439855577102apto.jpg', '159439659711600000000 floor-plan.jpg', '1594151051512hero-1.jpg', 'Rua Martha Denzin, 150', 'Vendido', 'Usado'),
+(136, '111.111.111-11', '555.555.555-66', 'Casa Grande', '', 3, 3, 6, 680000.00, 2010, 0, 850, 4, 4, 2, 6, 1, '1594496535404sitios.jpg', '159449651829000000000-floor-plan.jpg', '1594151110324hero-2.jpg', 'Rua Alameda Samambaias, 565', 'Para Venda', 'Usado'),
+(137, '111.111.111-11', '555.555.555-66', 'Apartamento Barato', '', 4, 1, 1, 750.00, 2015, 0, 65, 2, 1, 0, 1, 0, '159449690311603aptoal.jpg', '159439675615400000000 floor-plan.jpg', '159449790483502apto.jpg', 'R. Dr. Querubino Soeiro, 1552', 'Para Aluguel', 'Novo'),
+(138, '99.999.999/9999-99', '555.555.555-66', 'Casa Germinada', '', 6, 1, 4, 550.00, 1990, 0, 69, 3, 1, 1, 1, 1, '1594496362611casa.jpg', '159449637504700000000-floor-plan.jpg', '1594395837724chacara.jpg', 'Rua Almeida Campos 150', 'Para Venda', 'Planta'),
+(169, '99.999.999/9999-99', '555.555.555-66', 'Cobertura Luxuosa', 'fasfdasf', 4, 1, 1, 500000.00, 0, 0, 250, 4, 5, 3, 3, 1, '159469430110109.jpg', '159449663848400000000-floor-plan.jpg', '1594496830423cobertura.jpg', 'fdsfsaf', 'Para Venda', 'Usado'),
+(170, '99.999.999/9999-99', '555.555.555-66', 'Apartamento 2 Quartos', 'Apartamento Localizado em uma das melhores regiões de Belo Horizonte...', 4, 1, 1, 1000.00, 2013, 0, 80, 2, 1, 0, 1, 0, '159439851252201apto.jpg', '159439629533700000000 floor-plan.jpg', '1594151082107hero-2.jpg', 'Rua Almeida Campos 150', 'Alugado', 'Usado'),
+(171, '99.999.999/9999-99', '555.555.555-66', 'Casarão 5 Quartos', 'Casa com ....', 4, 1, 1, 980000.00, 2017, 5, 1400, 5, 4, 2, 4, 1, '1594496567912chacara.jpg', '159449657723600000000-floor-plan.jpg', '1594151094510hero-1.jpg', 'Rua Almeida Campos 150', 'Para Venda', 'Usado'),
+(174, '887.888.888-99', '999.996.666-66', 'Cobertura Grande', 'Cobertura bem Luxuosa...', 4, 1, 5, 2300.00, 2018, 0, 190, 4, 4, 3, 4, 1, '1594692923901cobertura.jpg', '159469298510200000000-floor-plan.jpg', '1594692972184cobertura.jpg', 'Rua Almeida Campos 150', 'Para Aluguel', 'Usado'),
+(175, '111.111.111-11', '555.555.555-66', 'Apartamento Ipiranga', '', 4, 1, 1, 380000.00, 2016, 0, 160, 4, 4, 3, 3, 0, '159469446607801.jpg', 'sem-img.jpg', '159469447535608.jpeg', '', 'Para Venda', 'Usado'),
+(176, '99.999.999/9999-99', '555.555.555-66', 'Chácara Grande', 'Linda chácara..', 1, 3, 6, 490000.00, 1996, 0, 2500, 4, 5, 2, 10, 1, '1594694639714chacara.jpg', 'sem-img.jpg', '1594694649435chacara.jpg', '', 'Para Venda', 'Usado'),
+(177, '99.999.999/9999-99', '555.555.555-66', 'Apartamento Serra Verde', '', 3, 1, 4, 125000.00, 1996, 0, 65, 3, 2, 1, 1, 0, '159469478878006.jpg', 'sem-img.jpg', '159469479382606.jpg', '', 'Para Venda', 'Usado'),
+(178, '111.111.111-11', '555.555.555-66', 'Casa 4 Quartos', '', 3, 1, 3, 225000.00, 1998, 0, 120, 4, 2, 1, 3, 0, '1594694904726casa.webp', 'sem-img.jpg', '1594694917479casa.webp', '', 'Para Venda', 'Usado'),
+(179, '111.111.111-11', '555.555.555-66', 'Casa 2 Quartos', '', 3, 1, 2, 750.00, 1991, 0, 65, 2, 1, 0, 1, 0, '159469501585608.jpeg', 'sem-img.jpg', '159469502090308.jpeg', '', 'Alugado', 'Usado'),
+(180, '99.999.999/9999-99', '555.555.555-66', 'Lote 2 Mil Metros', '', 7, 3, 6, 80000.00, 2020, 0, 2200, 0, 0, 0, 0, 0, '1594765258003lote.png', 'sem-img.jpg', '1594765267097lotes.jpg', '', 'Para Venda', 'Novo'),
+(181, '111.111.111-11', '555.555.555-66', 'Apartamento Centro', 'Apartamento ...', 4, 3, 6, 180.00, 1995, 0, 68, 3, 1, 0, 1, 0, '05.jpg', '00000000 floor-plan.jpg', '08.jpeg', 'Rua Almeida Campos 150', 'Vendido', 'Usado'),
+(184, '99.999.999/9999-99', '555.555.555-66', 'Cobertura Excelente', 'Excelente Cobertura em Bairro Bom em Belo ...', 5, 1, 5, 760000.00, 2018, 0, 130, 4, 3, 2, 2, 0, '07.jpeg', '00000000 floor-plan.jpg', '09.jpg', 'Rua A', 'Para Venda', 'Usado');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `movimentacoes`
+-- Estrutura para tabela `movimentacoes`
 --
 
 CREATE TABLE `movimentacoes` (
@@ -423,46 +437,46 @@ CREATE TABLE `movimentacoes` (
   `valor` decimal(10,2) NOT NULL,
   `tesoureiro` varchar(20) NOT NULL,
   `data` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Extraindo dados da tabela `movimentacoes`
+-- Despejando dados para a tabela `movimentacoes`
 --
 
 INSERT INTO `movimentacoes` (`id`, `tipo`, `movimento`, `valor`, `tesoureiro`, `data`) VALUES
-(1, 'Entrada', 'Aluguel', '70.00', '777.777.777-77', '2020-07-13'),
-(2, 'Entrada', 'Aluguel', '52.50', '777.777.777-77', '2020-07-14'),
-(3, 'Entrada', 'Venda', '12950.00', '777.777.777-77', '2020-07-14'),
-(4, 'Saída', 'Aluguel', '750.00', '777.777.777-77', '2020-07-14'),
-(5, 'Saída', 'Aluguel', '75.00', '777.777.777-77', '2020-07-14'),
-(6, 'Saída', 'Aluguel', '675.00', '777.777.777-77', '2020-07-14'),
-(7, 'Saída', 'Compra de Vidro', '342.00', '777.777.777-77', '2020-07-14'),
-(8, 'Saída', 'Compra de Vidro', '380.00', '777.777.777-77', '2020-07-14'),
-(9, 'Entrada', 'Aluguel', '52.50', '777.777.777-77', '2020-07-14'),
-(10, 'Entrada', 'Venda', '68600.00', '777.777.777-77', '2020-07-14'),
-(11, 'Saída', 'Pagamento Conta', '780.00', '777.777.777-77', '2020-07-14'),
-(12, 'Saída', 'Aluguel', '900.00', '777.777.777-77', '2020-07-14'),
-(13, 'Entrada', 'Aluguel', '52.50', '777.777.777-77', '2020-07-14'),
-(14, 'Saída', 'Aluguel', '675.00', '777.777.777-77', '2020-07-14'),
-(15, 'Saída', 'Pagamento Conta', '480.00', '777.777.777-77', '2020-07-14'),
-(16, 'Entrada', 'Aluguel', '52.50', '777.777.777-77', '2020-08-10'),
-(17, 'Saída', 'Aluguel', '750.00', '777.777.777-77', '2020-08-10'),
-(18, 'Saída', 'Aluguel', '750.00', '777.777.777-77', '2020-08-10'),
-(19, 'Entrada', 'Pagamento Aluguel', '750.00', '777.777.777-77', '2020-08-10'),
-(20, 'Entrada', 'Venda de Cadeiras', '60.00', '777.777.777-77', '2020-08-10'),
-(21, 'Entrada', 'Aluguel', '70.00', '777.777.777-77', '2020-08-11'),
-(22, 'Entrada', 'Aluguel', '52.50', '777.777.777-77', '2020-08-11'),
-(23, 'Entrada', 'Venda', '47600.00', '777.777.777-77', '2020-08-11'),
-(24, 'Saída', 'Aluguel', '900.00', '777.777.777-77', '2020-08-11'),
-(25, 'Saída', 'Compra de Cadeiras', '1600.00', '777.777.777-77', '2020-08-11'),
-(32, 'Saída', 'Conta de Luz', '860.00', '777.777.777-77', '2020-08-12'),
-(33, 'Saída', 'Aluguel', '900.00', '777.777.777-77', '2020-08-12'),
-(34, 'Entrada', 'Aluguel', '70.00', '777.777.777-77', '2020-08-12');
+(1, 'Entrada', 'Aluguel', 70.00, '777.777.777-77', '2020-07-13'),
+(2, 'Entrada', 'Aluguel', 52.50, '777.777.777-77', '2020-07-14'),
+(3, 'Entrada', 'Venda', 12950.00, '777.777.777-77', '2020-07-14'),
+(4, 'Saída', 'Aluguel', 750.00, '777.777.777-77', '2020-07-14'),
+(5, 'Saída', 'Aluguel', 75.00, '777.777.777-77', '2020-07-14'),
+(6, 'Saída', 'Aluguel', 675.00, '777.777.777-77', '2020-07-14'),
+(7, 'Saída', 'Compra de Vidro', 342.00, '777.777.777-77', '2020-07-14'),
+(8, 'Saída', 'Compra de Vidro', 380.00, '777.777.777-77', '2020-07-14'),
+(9, 'Entrada', 'Aluguel', 52.50, '777.777.777-77', '2020-07-14'),
+(10, 'Entrada', 'Venda', 68600.00, '777.777.777-77', '2020-07-14'),
+(11, 'Saída', 'Pagamento Conta', 780.00, '777.777.777-77', '2020-07-14'),
+(12, 'Saída', 'Aluguel', 900.00, '777.777.777-77', '2020-07-14'),
+(13, 'Entrada', 'Aluguel', 52.50, '777.777.777-77', '2020-07-14'),
+(14, 'Saída', 'Aluguel', 675.00, '777.777.777-77', '2020-07-14'),
+(15, 'Saída', 'Pagamento Conta', 480.00, '777.777.777-77', '2020-07-14'),
+(16, 'Entrada', 'Aluguel', 52.50, '777.777.777-77', '2020-08-10'),
+(17, 'Saída', 'Aluguel', 750.00, '777.777.777-77', '2020-08-10'),
+(18, 'Saída', 'Aluguel', 750.00, '777.777.777-77', '2020-08-10'),
+(19, 'Entrada', 'Pagamento Aluguel', 750.00, '777.777.777-77', '2020-08-10'),
+(20, 'Entrada', 'Venda de Cadeiras', 60.00, '777.777.777-77', '2020-08-10'),
+(21, 'Entrada', 'Aluguel', 70.00, '777.777.777-77', '2020-08-11'),
+(22, 'Entrada', 'Aluguel', 52.50, '777.777.777-77', '2020-08-11'),
+(23, 'Entrada', 'Venda', 47600.00, '777.777.777-77', '2020-08-11'),
+(24, 'Saída', 'Aluguel', 900.00, '777.777.777-77', '2020-08-11'),
+(25, 'Saída', 'Compra de Cadeiras', 1600.00, '777.777.777-77', '2020-08-11'),
+(32, 'Saída', 'Conta de Luz', 860.00, '777.777.777-77', '2020-08-12'),
+(33, 'Saída', 'Aluguel', 900.00, '777.777.777-77', '2020-08-12'),
+(34, 'Entrada', 'Aluguel', 70.00, '777.777.777-77', '2020-08-12');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `saidas`
+-- Estrutura para tabela `saidas`
 --
 
 CREATE TABLE `saidas` (
@@ -471,30 +485,30 @@ CREATE TABLE `saidas` (
   `tesoureiro` varchar(20) NOT NULL,
   `descricao` varchar(30) NOT NULL,
   `data` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Extraindo dados da tabela `saidas`
+-- Despejando dados para a tabela `saidas`
 --
 
 INSERT INTO `saidas` (`id`, `valor`, `tesoureiro`, `descricao`, `data`) VALUES
-(1, '750.00', '777.777.777-77', 'Aluguel', '2020-07-14'),
-(2, '75.00', '777.777.777-77', 'Aluguel', '2020-07-14'),
-(3, '675.00', '777.777.777-77', 'Aluguel', '2020-07-14'),
-(4, '342.00', '777.777.777-77', 'Compra de Vidro', '2020-07-14'),
-(5, '380.00', '777.777.777-77', 'Compra de Vidro', '2020-07-14'),
-(6, '780.00', '777.777.777-77', 'Pagamento Conta', '2020-07-14'),
-(7, '900.00', '777.777.777-77', 'Aluguel', '2020-07-14'),
-(8, '675.00', '777.777.777-77', 'Aluguel', '2020-07-14'),
-(9, '480.00', '777.777.777-77', 'Pagamento Conta', '2020-07-14'),
-(10, '900.00', '777.777.777-77', 'Aluguel', '2020-08-11'),
-(16, '860.00', '777.777.777-77', 'Conta de Luz', '2020-08-12'),
-(18, '900.00', '777.777.777-77', 'Aluguel', '2020-08-12');
+(1, 750.00, '777.777.777-77', 'Aluguel', '2020-07-14'),
+(2, 75.00, '777.777.777-77', 'Aluguel', '2020-07-14'),
+(3, 675.00, '777.777.777-77', 'Aluguel', '2020-07-14'),
+(4, 342.00, '777.777.777-77', 'Compra de Vidro', '2020-07-14'),
+(5, 380.00, '777.777.777-77', 'Compra de Vidro', '2020-07-14'),
+(6, 780.00, '777.777.777-77', 'Pagamento Conta', '2020-07-14'),
+(7, 900.00, '777.777.777-77', 'Aluguel', '2020-07-14'),
+(8, 675.00, '777.777.777-77', 'Aluguel', '2020-07-14'),
+(9, 480.00, '777.777.777-77', 'Pagamento Conta', '2020-07-14'),
+(10, 900.00, '777.777.777-77', 'Aluguel', '2020-08-11'),
+(16, 860.00, '777.777.777-77', 'Conta de Luz', '2020-08-12'),
+(18, 900.00, '777.777.777-77', 'Aluguel', '2020-08-12');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tarefas`
+-- Estrutura para tabela `tarefas`
 --
 
 CREATE TABLE `tarefas` (
@@ -506,10 +520,10 @@ CREATE TABLE `tarefas` (
   `id_imovel` varchar(10) NOT NULL,
   `corretor` varchar(20) NOT NULL,
   `status` varchar(15) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Extraindo dados da tabela `tarefas`
+-- Despejando dados para a tabela `tarefas`
 --
 
 INSERT INTO `tarefas` (`id`, `titulo`, `descricao`, `data`, `hora`, `id_imovel`, `corretor`, `status`) VALUES
@@ -533,7 +547,7 @@ INSERT INTO `tarefas` (`id`, `titulo`, `descricao`, `data`, `hora`, `id_imovel`,
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tesoureiros`
+-- Estrutura para tabela `tesoureiros`
 --
 
 CREATE TABLE `tesoureiros` (
@@ -547,10 +561,10 @@ CREATE TABLE `tesoureiros` (
   `descricao` varchar(90) DEFAULT NULL,
   `twitter` varchar(150) DEFAULT NULL,
   `facebook` varchar(150) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Extraindo dados da tabela `tesoureiros`
+-- Despejando dados para a tabela `tesoureiros`
 --
 
 INSERT INTO `tesoureiros` (`id`, `nome`, `cpf`, `telefone`, `email`, `endereco`, `foto`, `descricao`, `twitter`, `facebook`) VALUES
@@ -563,7 +577,7 @@ INSERT INTO `tesoureiros` (`id`, `nome`, `cpf`, `telefone`, `email`, `endereco`,
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tipos`
+-- Estrutura para tabela `tipos`
 --
 
 CREATE TABLE `tipos` (
@@ -571,10 +585,10 @@ CREATE TABLE `tipos` (
   `nome` varchar(50) NOT NULL,
   `imagem` varchar(100) NOT NULL,
   `imoveis` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Extraindo dados da tabela `tipos`
+-- Despejando dados para a tabela `tipos`
 --
 
 INSERT INTO `tipos` (`id`, `nome`, `imagem`, `imoveis`) VALUES
@@ -589,7 +603,7 @@ INSERT INTO `tipos` (`id`, `nome`, `imagem`, `imoveis`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `usuarios`
+-- Estrutura para tabela `usuarios`
 --
 
 CREATE TABLE `usuarios` (
@@ -600,10 +614,10 @@ CREATE TABLE `usuarios` (
   `senha` varchar(35) NOT NULL,
   `nivel` varchar(35) NOT NULL,
   `foto` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Extraindo dados da tabela `usuarios`
+-- Despejando dados para a tabela `usuarios`
 --
 
 INSERT INTO `usuarios` (`id`, `nome`, `cpf`, `email`, `senha`, `nivel`, `foto`) VALUES
@@ -621,7 +635,7 @@ INSERT INTO `usuarios` (`id`, `nome`, `cpf`, `email`, `senha`, `nivel`, `foto`) 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `vendas`
+-- Estrutura para tabela `vendas`
 --
 
 CREATE TABLE `vendas` (
@@ -633,24 +647,24 @@ CREATE TABLE `vendas` (
   `data` date NOT NULL,
   `data_pgto` date DEFAULT NULL,
   `comprador` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Extraindo dados da tabela `vendas`
+-- Despejando dados para a tabela `vendas`
 --
 
 INSERT INTO `vendas` (`id`, `imovel`, `corretor`, `valor`, `pago`, `data`, `data_pgto`, `comprador`) VALUES
-(2, 135, '555.555.555-66', '185000.00', 'Sim', '2020-07-09', '2020-08-13', '111.111.111-19'),
-(3, 138, '555.555.555-66', '550.00', 'Sim', '2020-07-09', '2020-08-12', '111.111.111-19'),
-(4, 136, '555.555.555-66', '680000.00', 'Sim', '2020-07-09', '2020-08-11', '111.111.111-19'),
-(5, 171, '555.555.555-66', '980000.00', 'Sim', '2020-07-01', '2020-08-14', '58.588.888/8888-88'),
-(6, 181, '555.555.555-66', '190000.00', 'Não', '2020-07-14', NULL, NULL),
-(7, 181, '555.555.555-66', '180.00', 'Não', '2020-08-12', NULL, NULL);
+(2, 135, '555.555.555-66', 185000.00, 'Sim', '2020-07-09', '2020-08-13', '111.111.111-19'),
+(3, 138, '555.555.555-66', 550.00, 'Sim', '2020-07-09', '2020-08-12', '111.111.111-19'),
+(4, 136, '555.555.555-66', 680000.00, 'Sim', '2020-07-09', '2020-08-11', '111.111.111-19'),
+(5, 171, '555.555.555-66', 980000.00, 'Sim', '2020-07-01', '2020-08-14', '58.588.888/8888-88'),
+(6, 181, '555.555.555-66', 190000.00, 'Não', '2020-07-14', NULL, NULL),
+(7, 181, '555.555.555-66', 180.00, 'Não', '2020-08-12', NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `vendedores`
+-- Estrutura para tabela `vendedores`
 --
 
 CREATE TABLE `vendedores` (
@@ -660,134 +674,135 @@ CREATE TABLE `vendedores` (
   `doc` varchar(25) NOT NULL,
   `telefone` varchar(15) NOT NULL,
   `endereco` varchar(100) NOT NULL,
-  `corretor` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `corretor` varchar(20) NOT NULL,
+  `foto` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Extraindo dados da tabela `vendedores`
+-- Despejando dados para a tabela `vendedores`
 --
 
-INSERT INTO `vendedores` (`id`, `nome`, `tipo_pessoa`, `doc`, `telefone`, `endereco`, `corretor`) VALUES
-(9, 'Paula Campos', 'Fisica', '111.111.111-11', '(55) 55555-5555', 'Rua C', '555.555.555-66'),
-(10, 'Empreza Zx', 'Juridica', '99.999.999/9999-99', '(99) 99999-9999', 'Rua Almeida Campos 150', '555.555.555-66'),
-(15, 'Marcos Silva', 'Fisica', '887.888.888-99', '(33) 33333-3333', 'Rua Almeida Campos 150', '999.996.666-66'),
-(16, 'Paula', 'Fisica', '787.522.222-22', '(22) 22222-2222', 'Rua C', '555.555.555-66'),
-(17, 'Amanda', 'Fisica', '456.322.222-22', '(22) 22222-2222', 'Rua A', '555.555.555-66');
+INSERT INTO `vendedores` (`id`, `nome`, `tipo_pessoa`, `doc`, `telefone`, `endereco`, `corretor`, `foto`) VALUES
+(9, 'Paula Campos', 'Fisica', '111.111.111-11', '(55) 55555-5555', 'Rua C', '555.555.555-66', '1593544631752profile-agent.jpg'),
+(10, 'Empreza Zx', 'Juridica', '99.999.999/9999-99', '(99) 99999-9999', 'Rua Almeida Campos 150', '555.555.555-66', '1593544683057agent-6.jpg'),
+(15, 'Marcos Silva', 'Fisica', '887.888.888-99', '(33) 33333-3333', 'Rua Almeida Campos 150', '999.996.666-66', NULL),
+(16, 'Paula', 'Fisica', '787.522.222-22', '(22) 22222-2222', 'Rua C', '555.555.555-66', NULL),
+(17, 'Amanda', 'Fisica', '456.322.222-22', '(22) 22222-2222', 'Rua A', '555.555.555-66', NULL);
 
 --
 -- Índices para tabelas despejadas
 --
 
 --
--- Índices para tabela `alugueis`
+-- Índices de tabela `alugueis`
 --
 ALTER TABLE `alugueis`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `bairros`
+-- Índices de tabela `bairros`
 --
 ALTER TABLE `bairros`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `cidades`
+-- Índices de tabela `cidades`
 --
 ALTER TABLE `cidades`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `compradores`
+-- Índices de tabela `compradores`
 --
 ALTER TABLE `compradores`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `contas_pagar`
+-- Índices de tabela `contas_pagar`
 --
 ALTER TABLE `contas_pagar`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `contas_receber`
+-- Índices de tabela `contas_receber`
 --
 ALTER TABLE `contas_receber`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `corretores`
+-- Índices de tabela `corretores`
 --
 ALTER TABLE `corretores`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `entradas`
+-- Índices de tabela `entradas`
 --
 ALTER TABLE `entradas`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `imagens`
+-- Índices de tabela `imagens`
 --
 ALTER TABLE `imagens`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `imoveis`
+-- Índices de tabela `imoveis`
 --
 ALTER TABLE `imoveis`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `movimentacoes`
+-- Índices de tabela `movimentacoes`
 --
 ALTER TABLE `movimentacoes`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `saidas`
+-- Índices de tabela `saidas`
 --
 ALTER TABLE `saidas`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `tarefas`
+-- Índices de tabela `tarefas`
 --
 ALTER TABLE `tarefas`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `tesoureiros`
+-- Índices de tabela `tesoureiros`
 --
 ALTER TABLE `tesoureiros`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `tipos`
+-- Índices de tabela `tipos`
 --
 ALTER TABLE `tipos`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `usuarios`
+-- Índices de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `vendas`
+-- Índices de tabela `vendas`
 --
 ALTER TABLE `vendas`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `vendedores`
+-- Índices de tabela `vendedores`
 --
 ALTER TABLE `vendedores`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT de tabelas despejadas
+-- AUTO_INCREMENT para tabelas despejadas
 --
 
 --
@@ -800,7 +815,7 @@ ALTER TABLE `alugueis`
 -- AUTO_INCREMENT de tabela `bairros`
 --
 ALTER TABLE `bairros`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de tabela `cidades`

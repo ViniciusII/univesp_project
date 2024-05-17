@@ -65,6 +65,13 @@ include_once("../conexao.php");
                                 <span style="width:50%; text-align:right;  display: inline-block;"><small><input type="submit" value="Logar"></small></span>
                             </div>
 
+                            <div>
+                                <span style="width:48%; text-align:left;  display: inline-block;"><a class="small-text" href="#" data-toggle="modal" data-target="#modal-rec"><small>Cadastrar
+                                        Perfil?</small></a></span>
+                                <span style="width:50%; text-align:right;  display: inline-block;"><small>
+                            </div>
+
+
                             <p align="center" class="texto-alerta mt-2">
 
                                 <?php 
@@ -117,7 +124,7 @@ include_once("../conexao.php");
                 </div> <!-- end login -->
                 <div class="logo">
                     
-                    <span class="d-none d-md-block">IMOB</span>
+                    <img src="img/logo_branco.png" weidth="150" height="150">
 
                     <div class="clearfix"></div>
                 </div>
