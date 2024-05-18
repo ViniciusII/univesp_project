@@ -100,6 +100,8 @@ $pag = "corretores";
                                 $telefone2 = $res[0]['telefone'];
                                 $email2 = $res[0]['email'];
                                 $endereco2 = $res[0]['endereco'];
+                                $corretor = $res[0]['corretor'];
+                                $creci = $res[0]['creci'];
                                 $imagem2 = $res[0]['foto'];
 
                                 } else {
@@ -121,6 +123,7 @@ $pag = "corretores";
                             <div class="row">
                                 <div class="col-md-6 col-sm-12">
                                     <div class="form-group">
+
                                         <label >Nome</label>
                                         <input value="<?php echo @$nome2 ?>" type="text" class="form-control" id="nome" name="nome" placeholder="Nome">
                                     </div>
@@ -162,6 +165,46 @@ $pag = "corretores";
                             </div>
 
                             <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                  <div class="form-group">
+                                    <label for="corretorSelect">Selecione o Tipo</label>
+                                    <select class="form-control" id="corretorSelect" name="corretor" onchange="toggleCreci()">
+                                        <option value="Vendedor" <?php echo @$corretor == 'Vendedor' ? 'selected' : '0'; ?>>Vendedor</option>
+                                        <option value="Corretor" <?php echo @$corretor == 'Corretor' ? 'selected' : '1'; ?>>Corretor</option>
+
+                                    </select>
+                                  </div>
+                            </div>
+
+                            <div class="col-md-6 col-sm-12">
+                                <div class="form-group">
+                                    <label for="creci">Creci</label>
+                                    <input value="<?php echo @$creci ?>" type="text" class="form-control" id="creci" name="creci" placeholder="Creci" <?php echo @$ecorretor == 'Corretor' ? '' : 'disabled'; ?>>
+                                </div>
+                            </div>
+                            </div>
+
+                            <script>
+                 function toggleCreci() {
+        var corretor = document.getElementById('corretorSelect').value;
+        var creciInput = document.getElementById('creci');
+
+        if (corretor === 'Corretor') {
+            creciInput.disabled = false;
+        } else {
+            creciInput.disabled = true;
+            creciInput.value = '';  // Clear the value if disabled
+        }
+    }
+
+    window.onload = function() {
+        toggleCreci();  // Ensure the correct state on page load
+    };
+</script>
+
+                            
+
+                            <div class="row">
 
                                 <div class="col-md-6 col-sm-12">
                                     <div class="form-group">
@@ -178,7 +221,7 @@ $pag = "corretores";
 
                                 </div>
 
-
+                        
 
                             </div>
 

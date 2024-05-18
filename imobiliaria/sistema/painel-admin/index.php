@@ -10,11 +10,11 @@ include_once("../../conexao.php");
 
     $res = $pdo->query("SELECT * FROM usuarios where id = '" . $idUsuario . "' ");
     $dados = $res->fetchAll(PDO::FETCH_ASSOC);
-     $email = $dados[0]['email'];
-     $senha = $dados[0]['senha'];
-     $nome = $dados[0]['nome'];
-     $cpf = $dados[0]['cpf'];
-     $img = $dados[0]['foto'];
+    $email = isset($dados[0]['email']) ? $dados[0]['email'] : null;
+    $senha = isset($dados[0]['senha']) ? $dados[0]['senha'] : null;
+    $nome = isset($dados[0]['nome']) ? $dados[0]['nome'] : null;
+    $cpf = isset($dados[0]['cpf']) ? $dados[0]['cpf'] : null;
+    $img = isset($dados[0]['foto']) ? $dados[0]['foto'] : null;
 
       if ($nivelUsuario == null || $nivelUsuario!="admin") {
          echo "<script language='javascript'>window.location='../index.php'; </script>";

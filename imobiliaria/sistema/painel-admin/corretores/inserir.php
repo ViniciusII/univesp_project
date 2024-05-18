@@ -8,6 +8,15 @@ $email = $_POST['email'];
 $endereco = $_POST['endereco'];
 $id = $_POST['txtid'];
 $antigo = $_POST['antigo'];
+$corretor = $_POST['corretor'];
+$creci = isset($_POST['creci']) ? $_POST['creci'] : '';
+
+if ($corretor == 'corretor') {
+    $valorCorretor = 1;
+    $creci = '';
+} else {
+    $valorCorretor = 0;
+}
 
 
  //SCRIPT PARA FOTO NO BANCO
@@ -46,7 +55,7 @@ if($cpf!=$antigo){
 
 
 if($id == ""){
-    $pdo->query("INSERT into corretores (nome, cpf, telefone, email, endereco, foto) values ('" . $nome . "', '" . $cpf . "' , '" . $telefone . "' , '" . $email . "', '" . $endereco . "', '" . $imagem . "')");
+    $pdo->query("INSERT into corretores (nome, cpf, telefone, email, endereco, foto, corretor, creci) values ('" . $nome . "', '" . $cpf . "' , '" . $telefone . "' , '" . $email . "', '" . $endereco . "', '" . $imagem . "','" . $corretor . "', '" . $creci . "')");
 
     $pdo->query("INSERT into usuarios (nome, cpf, email, senha, nivel, foto) values ('" . $nome . "', '" . $cpf . "', '" . $email . "', '123', 'corretor', '" . $imagem . "')");
 
