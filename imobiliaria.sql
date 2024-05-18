@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 16/05/2024 às 23:40
+-- Tempo de geração: 18/05/2024 às 21:09
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -45,7 +45,7 @@ CREATE TABLE `alugueis` (
 --
 
 INSERT INTO `alugueis` (`id`, `imovel`, `corretor`, `valor`, `ativo`, `data`, `data_pgto`, `data_inicio`, `data_final`, `inquilino`) VALUES
-(1, 137, '555.555.555-66', 750.00, 'Sim', '2020-08-12', '2020-09-11', '2020-08-12', '2025-08-12', '111.111.111-19'),
+(1, 137, '555.555.555-66', 750.00, 'Sim', '2020-08-12', '2021-08-07', '2020-08-12', '2025-08-12', '111.111.111-19'),
 (2, 170, '555.555.555-66', 1000.00, 'Sim', '2020-08-12', '2020-09-11', '2020-08-12', '2029-08-12', '111.111.111-11'),
 (3, 179, '555.555.555-66', 750.00, 'Sim', '2020-07-14', '2020-08-13', '2020-07-14', '2022-07-14', '111.111.111-11');
 
@@ -179,7 +179,18 @@ INSERT INTO `contas_pagar` (`id`, `valor`, `titulo`, `descricao`, `pago`, `tesou
 (19, 750.00, 'Aluguel', 'Paula Campos', 'Não', '', '2020-08-12', NULL),
 (20, 1000.00, 'Aluguel', 'Empreza Zx', 'Não', '', '2020-08-12', NULL),
 (21, 750.00, 'Aluguel', 'Paula Campos', 'Não', '', '2020-08-12', NULL),
-(22, 1000.00, 'Aluguel', 'Empreza Zx', 'Não', '', '2020-08-12', NULL);
+(22, 1000.00, 'Aluguel', 'Empreza Zx', 'Não', '', '2020-08-12', NULL),
+(23, 750.00, 'Aluguel', 'Paula Campos', 'Não', '', '2024-05-17', NULL),
+(24, 750.00, 'Aluguel', 'Paula Campos', 'Não', '', '2024-05-17', NULL),
+(25, 750.00, 'Aluguel', 'Paula Campos', 'Não', '', '2024-05-17', NULL),
+(26, 750.00, 'Aluguel', 'Paula Campos', 'Não', '', '2024-05-17', NULL),
+(27, 750.00, 'Aluguel', 'Paula Campos', 'Não', '', '2024-05-17', NULL),
+(28, 750.00, 'Aluguel', 'Paula Campos', 'Não', '', '2024-05-17', NULL),
+(29, 750.00, 'Aluguel', 'Paula Campos', 'Não', '', '2024-05-17', NULL),
+(30, 750.00, 'Aluguel', 'Paula Campos', 'Não', '', '2024-05-17', NULL),
+(31, 750.00, 'Aluguel', 'Paula Campos', 'Não', '', '2024-05-17', NULL),
+(32, 750.00, 'Aluguel', 'Paula Campos', 'Não', '', '2024-05-17', NULL),
+(33, 750.00, 'Aluguel', 'Paula Campos', 'Não', '', '2024-05-17', NULL);
 
 -- --------------------------------------------------------
 
@@ -222,7 +233,18 @@ INSERT INTO `contas_receber` (`id`, `valor`, `titulo`, `descricao`, `tipo`, `cor
 (23, 1000.00, 'Pagamento Aluguel', 'Matheus Campos', 'Aluguel', '555.555.555-66', '2020-08-12', 'Não', '111111113'),
 (24, 550.00, 'Pagamento Venda', 'Carla Silva', 'Venda', '555.555.555-66', '2020-08-12', 'Não', '111.111.111-19'),
 (25, 750.00, 'Pagamento Aluguel', 'Carla Silva', 'Aluguel', '555.555.555-66', '2020-08-12', 'Não', '111.111.111-19'),
-(26, 1000.00, 'Pagamento Aluguel', 'Marcos Campos', 'Aluguel', '555.555.555-66', '2020-08-12', 'Não', '111.111.111-11');
+(26, 1000.00, 'Pagamento Aluguel', 'Marcos Campos', 'Aluguel', '555.555.555-66', '2020-08-12', 'Não', '111.111.111-11'),
+(27, 750.00, 'Pagamento Aluguel', 'Carla Silva', 'Aluguel', '555.555.555-66', '2024-05-17', 'Não', '111.111.111-19'),
+(28, 750.00, 'Pagamento Aluguel', 'Carla Silva', 'Aluguel', '555.555.555-66', '2024-05-17', 'Não', '111.111.111-19'),
+(29, 750.00, 'Pagamento Aluguel', 'Carla Silva', 'Aluguel', '555.555.555-66', '2024-05-17', 'Não', '111.111.111-19'),
+(30, 750.00, 'Pagamento Aluguel', 'Carla Silva', 'Aluguel', '555.555.555-66', '2024-05-17', 'Não', '111.111.111-19'),
+(31, 750.00, 'Pagamento Aluguel', 'Carla Silva', 'Aluguel', '555.555.555-66', '2024-05-17', 'Não', '111.111.111-19'),
+(32, 750.00, 'Pagamento Aluguel', 'Carla Silva', 'Aluguel', '555.555.555-66', '2024-05-17', 'Não', '111.111.111-19'),
+(33, 750.00, 'Pagamento Aluguel', 'Carla Silva', 'Aluguel', '555.555.555-66', '2024-05-17', 'Não', '111.111.111-19'),
+(34, 750.00, 'Pagamento Aluguel', 'Carla Silva', 'Aluguel', '555.555.555-66', '2024-05-17', 'Não', '111.111.111-19'),
+(35, 750.00, 'Pagamento Aluguel', 'Carla Silva', 'Aluguel', '555.555.555-66', '2024-05-17', 'Não', '111.111.111-19'),
+(36, 750.00, 'Pagamento Aluguel', 'Carla Silva', 'Aluguel', '555.555.555-66', '2024-05-17', 'Não', '111.111.111-19'),
+(37, 750.00, 'Pagamento Aluguel', 'Carla Silva', 'Aluguel', '555.555.555-66', '2024-05-17', 'Não', '111.111.111-19');
 
 -- --------------------------------------------------------
 
@@ -240,25 +262,27 @@ CREATE TABLE `corretores` (
   `foto` varchar(100) NOT NULL,
   `descricao` varchar(90) DEFAULT NULL,
   `twitter` varchar(150) DEFAULT NULL,
-  `facebook` varchar(150) DEFAULT NULL
+  `facebook` varchar(150) DEFAULT NULL,
+  `corretor` tinyint(1) DEFAULT NULL,
+  `creci` varchar(15) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Despejando dados para a tabela `corretores`
 --
 
-INSERT INTO `corretores` (`id`, `nome`, `cpf`, `telefone`, `email`, `endereco`, `foto`, `descricao`, `twitter`, `facebook`) VALUES
-(1, 'Marcelo Silva', '555.555.555-55', '(22) 22222-2222', 'marcelo@hotmail.com', 'Rua A', '1593540722860agent-1.jpg', NULL, NULL, NULL),
-(2, 'Paloma Campos', '555.555.555-15', '(22) 22222-2233', 'paloma@hotmail.com', 'Rua Almeida Campos 150', '1593540760968agent-5.jpg', NULL, NULL, NULL),
-(4, 'Mauricio', '999.999.999-15', '(77) 77777-7777', 'aaa@hugocursos.com.br', 'afsdfafdfa', '1593544359932agent-2.jpg', NULL, NULL, NULL),
-(5, 'Marta SIlva', '645.555.555-55', '(99) 88888-8855', 'marta@hotmail.com', 'Rua XX', '1593544631752profile-agent.jpg', NULL, NULL, NULL),
-(6, 'Pedro Freitas', '594.555.454-54', '(65) 55555-5555', 'pedro@hotmail.com', 'Rua A', '1593544655113agent-4.jpg', 'Enquanto não encontrar sua casa dos sonhos eu não irei desistir!!', NULL, NULL),
-(7, 'Carlos Souza', '665.555.555-55', '(55) 55555-5555', 'carlos@hotmail.com', 'Rua C', '1593544683057agent-6.jpg', 'Atuo há 10 anos no ramo imobiliário, sempre encontrando os melhores imóveis!!', NULL, NULL),
-(13, 'Corretor Teste', '555.555.555-66', '(31) 97527-5084', 'corretor@hotmail.com', 'Rua Almeida Campos 150', '1593546386210agent-2.jpg', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'https://www.facebook.com/hugovasconcelosfreitas/', 'https://www.facebook.com/hugovasconcelosfreitas/'),
-(18, 'Pedro Silva', '999.996.666-66', '(22) 22222-2222', 'pedro@hotmail.com', '', '1594696396713agent-4.jpg', ' Atuo hÃÂ¡ 16 anos no mercado, sempre buscando as melhores oportunidades!! ', '', ''),
-(19, 'Amanda', '555.555.555-59', '(55) 55555-5555', 'amanda@hotmail.com', 'bbbbbbbb', '1593540760968agent-5.jpg', NULL, NULL, NULL),
-(22, 'Marcilio Silva', '123.456.985-00', '(55) 55555-55', 'marcilio@hotmail.com', 'Rua A', '1593540334911agent-1.jpg', NULL, NULL, NULL),
-(24, 'Maria', '111.222.333-85', '(33) 33333-333', 'maria@hotmail.com', 'Rua A', '1593544631752profile-agent.jpg', NULL, NULL, NULL);
+INSERT INTO `corretores` (`id`, `nome`, `cpf`, `telefone`, `email`, `endereco`, `foto`, `descricao`, `twitter`, `facebook`, `corretor`, `creci`) VALUES
+(1, 'Marcelo Silva', '555.555.555-55', '(22) 22222-2222', 'marcelo@hotmail.com', 'Rua A', '1593540722860agent-1.jpg', NULL, NULL, NULL, NULL, NULL),
+(2, 'Paloma Campos', '555.555.555-15', '(22) 22222-2233', 'paloma@hotmail.com', 'Rua Almeida Campos 150', '1593540760968agent-5.jpg', NULL, NULL, NULL, NULL, NULL),
+(4, 'Mauricio', '999.999.999-15', '(77) 77777-7777', 'aaa@hugocursos.com.br', 'afsdfafdfa', '1593544359932agent-2.jpg', NULL, NULL, NULL, NULL, NULL),
+(5, 'Marta SIlva', '645.555.555-55', '(99) 88888-8855', 'marta@hotmail.com', 'Rua XX', '1593544631752profile-agent.jpg', NULL, NULL, NULL, NULL, NULL),
+(6, 'Pedro Freitas', '594.555.454-54', '(65) 55555-5555', 'pedro@hotmail.com', 'Rua A', '1593544655113agent-4.jpg', 'Enquanto não encontrar sua casa dos sonhos eu não irei desistir!!', NULL, NULL, NULL, NULL),
+(7, 'Carlos Souza', '665.555.555-55', '(55) 55555-5555', 'carlos@hotmail.com', 'Rua C', '1593544683057agent-6.jpg', 'Atuo há 10 anos no ramo imobiliário, sempre encontrando os melhores imóveis!!', NULL, NULL, NULL, NULL),
+(13, 'Corretor Teste', '555.555.555-66', '(31) 97527-5084', 'corretor@hotmail.com', 'Rua Almeida Campos 150', '1593546386210agent-2.jpg', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'https://www.facebook.com/hugovasconcelosfreitas/', 'https://www.facebook.com/hugovasconcelosfreitas/', NULL, NULL),
+(18, 'Pedro Silva', '999.996.666-66', '(22) 22222-2222', 'pedro@hotmail.com', '', '1594696396713agent-4.jpg', ' Atuo hÃÂ¡ 16 anos no mercado, sempre buscando as melhores oportunidades!! ', '', '', NULL, NULL),
+(19, 'Amanda', '555.555.555-59', '(55) 55555-5555', 'amanda@hotmail.com', 'bbbbbbbb', '1593540760968agent-5.jpg', NULL, NULL, NULL, NULL, NULL),
+(22, 'Marcilio Silva', '123.456.985-00', '(55) 55555-55', 'marcilio@hotmail.com', 'Rua A', '1593540334911agent-1.jpg', NULL, NULL, NULL, NULL, NULL),
+(24, 'Maria', '111.222.333-85', '(33) 33333-333', 'maria@hotmail.com', 'Rua A', '1593544631752profile-agent.jpg', NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -833,13 +857,13 @@ ALTER TABLE `compradores`
 -- AUTO_INCREMENT de tabela `contas_pagar`
 --
 ALTER TABLE `contas_pagar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT de tabela `contas_receber`
 --
 ALTER TABLE `contas_receber`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT de tabela `corretores`
