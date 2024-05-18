@@ -12,8 +12,8 @@ include_once("cabecalho.php");
         <div class="row">
             <div class="col-lg-6">
                 <div class="agent-search-form">
-                    <form action="corretores.php">
-                        <input type="text" name="nome" placeholder="Buscar Corretor">
+                    <form action="vendedores.php">
+                        <input type="text" name="nome" placeholder="Buscar Vendedor">
                         <button type="submit"><i class="fa fa-search"></i></button>
                     </form>
                 </div>
@@ -26,12 +26,14 @@ include_once("cabecalho.php");
 
                 <?php
 
-                        if(@$_GET['nome'] != null){
-                            @$busca = @$_GET['nome'];
-                        }
 
-                        
-                        $res = $pdo->query("SELECT * FROM corretores where nome LIKE '%".@$busca."%'");
+    if(@$_GET['nome'] != null){
+        @$busca = @$_GET['nome'];
+    }
+
+
+                       
+                        $res = $pdo->query("SELECT * FROM corretores where nome LIKE '%".@$busca."%' AND corretor = 'Vendedor'" );
           $dados = $res->fetchAll(PDO::FETCH_ASSOC);
           for ($i=0; $i < count($dados); $i++) { 
             foreach ($dados[$i] as $key => $value) {
@@ -39,6 +41,7 @@ include_once("cabecalho.php");
 
             $id = $dados[$i]['id'];
              $nome = $dados[$i]['nome'];
+             $corretor = $dados[$i]['corretor'];
                         $descricao = $dados[$i]['descricao'];
                         $telefone = $dados[$i]['telefone'];
                         $email = $dados[$i]['email'];

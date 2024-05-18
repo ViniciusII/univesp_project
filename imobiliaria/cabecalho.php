@@ -138,6 +138,7 @@ include_once("config.php");
                                     <li class="active"><a href="./index.php">Home</a></li>
                                     <li><a href="imoveis.php">Imóveis</a></li>
                                     <li><a href="corretores.php">Corretores</a></li>
+                                    <li><a href="vendedores.php">Vendedores</a></li>
                                     <li><a href="sobre.php">Sobre</a></li>
 
                                     <li><a href="contatos.php">Contatos</a></li>
