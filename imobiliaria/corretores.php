@@ -31,7 +31,7 @@ include_once("cabecalho.php");
                         }
 
                         
-                        $res = $pdo->query("SELECT * FROM corretores where nome LIKE '%".@$busca."%'");
+                        $res = $pdo->query("SELECT * FROM corretores where nome LIKE '%".@$busca."%' and corretor = 'Corretor'");
           $dados = $res->fetchAll(PDO::FETCH_ASSOC);
           for ($i=0; $i < count($dados); $i++) { 
             foreach ($dados[$i] as $key => $value) {
