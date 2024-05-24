@@ -1,8 +1,8 @@
 <?php 
 
-$whatsapp = "(31)97527-5084";
+$whatsapp = "(19)99999-9999";
 $telfixo = "(31)3333-3333";
-$whatsappLink = "5531975275084";
+$whatsappLink = "1999999999";
 $itens_por_pagina = 6;
 $nomeDaImobiliaria = "Liberty Place";
 $email = "libertyplaceimobiliaria@gmail.com";

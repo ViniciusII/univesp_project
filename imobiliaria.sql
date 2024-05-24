@@ -278,7 +278,7 @@ INSERT INTO `corretores` (`id`, `nome`, `cpf`, `telefone`, `email`, `endereco`, 
 (5, 'Marta SIlva', '645.555.555-55', '(99) 88888-8855', 'marta@hotmail.com', 'Rua XX', '1593544631752profile-agent.jpg', NULL, NULL, NULL, NULL, NULL),
 (6, 'Pedro Freitas', '594.555.454-54', '(65) 55555-5555', 'pedro@hotmail.com', 'Rua A', '1593544655113agent-4.jpg', 'Enquanto não encontrar sua casa dos sonhos eu não irei desistir!!', NULL, NULL, NULL, NULL),
 (7, 'Carlos Souza', '665.555.555-55', '(55) 55555-5555', 'carlos@hotmail.com', 'Rua C', '1593544683057agent-6.jpg', 'Atuo há 10 anos no ramo imobiliário, sempre encontrando os melhores imóveis!!', NULL, NULL, NULL, NULL),
-(13, 'Corretor Teste', '555.555.555-66', '(31) 97527-5084', 'corretor@hotmail.com', 'Rua Almeida Campos 150', '1593546386210agent-2.jpg', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'https://www.facebook.com/hugovasconcelosfreitas/', 'https://www.facebook.com/hugovasconcelosfreitas/', NULL, NULL),
+(13, 'Corretor Teste', '555.555.555-66', '(19) 9999-9999', 'corretor@hotmail.com', 'Rua Almeida Campos 150', '1593546386210agent-2.jpg', 'teste', 'https://www.facebook.com/', 'https://www.facebook.com/', NULL, NULL),
 (18, 'Pedro Silva', '999.996.666-66', '(22) 22222-2222', 'pedro@hotmail.com', '', '1594696396713agent-4.jpg', ' Atuo hÃÂ¡ 16 anos no mercado, sempre buscando as melhores oportunidades!! ', '', '', NULL, NULL),
 (19, 'Amanda', '555.555.555-59', '(55) 55555-5555', 'amanda@hotmail.com', 'bbbbbbbb', '1593540760968agent-5.jpg', NULL, NULL, NULL, NULL, NULL),
 (22, 'Marcilio Silva', '123.456.985-00', '(55) 55555-55', 'marcilio@hotmail.com', 'Rua A', '1593540334911agent-1.jpg', NULL, NULL, NULL, NULL, NULL),
@@ -596,7 +596,7 @@ INSERT INTO `tesoureiros` (`id`, `nome`, `cpf`, `telefone`, `email`, `endereco`,
 (19, 'Tesoureiro Testes', '777.777.777-77', '(33) 33333-3333', 'tesoureiro@hotmail.com', 'Rua A', '1594322561490agent-3.jpg', ' aaaaaaaaaaaaaa', '', ''),
 (20, 'Gabriela Silva', '456.987.123-5', '(33) 33333-3333', 'gabi@hotmail.com', 'Rua C', '1593544631752profile-agent.jpg', NULL, NULL, NULL),
 (23, 'Kamila Campos', '123.333.333-33', '(88) 88888-8888', 'kamila@hotmail.com', 'Rua C', '1593540760968agent-5.jpg', NULL, NULL, NULL),
-(24, 'Hugo Vasconcelos', '895.555.555-55', '(33) 33333-3333', 'hugovasconcelosf@hotmail.com', 'Rua A', 'sem-foto.jpg', NULL, NULL, NULL);
+(24, 'Hugo Campos', '895.555.555-55', '(33) 33333-3333', 'hugo@hotmail.com', 'Rua A', 'sem-foto.jpg', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -645,8 +645,8 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nome`, `cpf`, `email`, `senha`, `nivel`, `foto`) VALUES
-(1, 'Administrador', '000.000.000-00', 'projetoimobiliariahv@gmail.com', '123', 'admin', '1593531424280hugo-profile.jpeg'),
-(3, 'Corretor Teste', '555.555.555-66', 'corretor@hotmail.com', '123', 'corretor', '1593546386210agent-2.jpg'),
+(1, 'Administrador', '000.000.000-00', 'admin@admin', '123', 'admin', '1593546386210agent-2.jpg'),
+(3, 'Vinicius Ribeiro', '555.555.555-66', 'corretor@hotmail.com', '123', 'corretor', '1593546386210agent-2.jpg'),
 (8, 'Paula Campos', '555.555.555-55', 'paula@hotmail.com', '123', 'tesoureiro', '1594322256615agent-5.jpg'),
 (9, 'Tesoureiro Testes', '777.777.777-77', 'tesoureiro@hotmail.com', '123', 'tesoureiro', '1594322561490agent-3.jpg'),
 (10, 'Pedro Silva', '999.996.666-66', 'pedro@hotmail.com', '123', 'corretor', '1594696396713agent-4.jpg'),
@@ -654,7 +654,7 @@ INSERT INTO `usuarios` (`id`, `nome`, `cpf`, `email`, `senha`, `nivel`, `foto`) 
 (13, 'Maria', '111.222.333-85', 'maria@hotmail.com', '123', 'corretor', '1593544631752profile-agent.jpg'),
 (14, 'Gabriela Silva', '456.987.123-5', 'gabi@hotmail.com', '123', 'tesoureiro', '1593544631752profile-agent.jpg'),
 (18, 'Kamila Campos', '123.333.333-33', 'kamila@hotmail.com', '123', 'tesoureiro', '1593540760968agent-5.jpg'),
-(19, 'Hugo Vasconcelos', '895.555.555-55', 'hugovasconcelosf@hotmail.com', '123', 'tesoureiro', 'sem-foto.jpg');
+(19, 'Hugo Campos', '895.555.555-55', 'hugo@hotmail.com', '123', 'tesoureiro', 'sem-foto.jpg');
 
 -- --------------------------------------------------------
 
