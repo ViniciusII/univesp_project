@@ -32,7 +32,7 @@ include_once("cabecalho.php");
                     <div class="about-text">
                         <div class="at-title">
                             <h3>Bem vindo a Liberty Place</h3>
-                            <p>A Liberty place tras a liberdade e facilidade que voce precisa no seu dia a dia. </p>
+                            <p>A Liberty Place oferece a liberdade e praticidade que você necessita em seu dia a dia. </p>
                         </div>
                         <div class="at-feature">
                             <div class="af-item">
